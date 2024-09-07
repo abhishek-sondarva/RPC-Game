@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /* background-color:antiquewhite; */
+
+}
+
+h1{
+    background-color: burlywood;
+    color:brown;
+    height: 5rem;
+    line-height: 5rem;
+}
+
+.choice{
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+}
+
+.choice:hover{
+    cursor: pointer;
+    background-color: burlywood;
+}
+
+img{
+    opacity: 0.5;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid burlywood;
+}
+
+.choices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 1rem;
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-top: 3rem;
+    gap: 5rem;
+}
+
+#user-score, #comp-score {
+    font-size: 5rem;
+}
+
+.msg-container{
+    margin-top: 3rem;
+
+}
+
+#msg{
+    background-color: burlywood;
+    color: black;
+    font-size: 2rem;
+    display: inline;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+@keyframes firework {
+    0% { 
+      transform: translate(-50%, 60vh);
+      width: 0.5vmin;
+      opacity: 1;
+    }
+    50% { 
+      width: 0.5vmin;
+      opacity: 1;
+    }
+    100% { 
+      width: 45vmin; 
+      opacity: 0; 
+    }
+  }
+  
+  .firework,
+  .firework::before,
+  .firework::after {
+    --top: 60vh;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5vmin;
+    aspect-ratio: 1;
+    background:
+      radial-gradient(circle, #ff0 0.2vmin, #0000 0) 50% 00%,
+      radial-gradient(circle, #ff0 0.3vmin, #0000 0) 00% 50%,
+      radial-gradient(circle, rgb(0, 255, 0) 0.5vmin, #0000 0) 50% 99%,
+      radial-gradient(circle, rgb(0, 255, 21) 0.2vmin, #0000 0) 99% 50%,
+      radial-gradient(circle, rgb(255, 0, 0) 0.3vmin, #0000 0) 80% 90%,
+      radial-gradient(circle, rgb(255, 0, 0) 0.5vmin, #0000 0) 95% 90%,
+      radial-gradient(circle, rgb(0, 255, 255) 0.5vmin, #0000 0) 10% 60%,
+      radial-gradient(circle, rgb(0, 238, 255) 0.2vmin, #0000 0) 31% 80%,
+      radial-gradient(circle, rgb(255, 0, 255) 0.3vmin, #0000 0) 80% 10%,
+      radial-gradient(circle, rgb(255, 0, 191) 0.2vmin, #0000 0) 90% 23%,
+      radial-gradient(circle, #ff0 0.3vmin, #0000 0) 45% 20%,
+      radial-gradient(circle, #ff0 0.5vmin, #0000 0) 13% 24%
+      ;
+    background-size: 2vmin 2vmin;
+    background-repeat: no-repeat;
+    animation: firework 2s infinite;
+  }
+  
+  .firework::before {
+    transform: translate(-50%, -50%) rotate(25deg) !important; 
+  }
+  
+  .firework::after {
+    transform: translate(-50%, -50%) rotate(-37deg) !important;
+  }
+
+  body,.choices,.msg-container,.score-board {
+    background: #234;
+  }
+
+
+  @media(max-width:768px){
+    body{
+        height: 100vh;
+    }
+    .choices{
+        flex-direction: column;
+    }
+    .msg-container{
+        height: 100%;
+    }
+    #msg{
+        font-size: 18px;
+    }
+  }
